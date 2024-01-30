@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="Informacion.css">
+    <link rel="stylesheet" href="Galeria.css">
+    <script src="modo-oscuro.js" defer></script>
+
+    <style>
+        /* Estilos para la información relevante de la institución */
+        .title-cards h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.25rem; /* 20px */
+        }
+
+        .contenido-card h3 {
+            font-weight: bold;
+        }
+
+        .contenido-card p {
+            font-size: 1rem; /* 16px */
+        }
+
+        /* Estilos para la tabla del usuario/consumidor */
+        .user-table {
+            margin-top: 1.25rem; /* 20px */
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .user-table th,
+        .user-table td {
+            border: 1px solid #ddd;
+            padding: 0.625rem; /* 10px */
+            text-align: left;
+            line-height: 5; /* Añadir el interlineado de 5 unidades */
+        }
+
+        .user-table th {
+            background-color: #59af9a;
+        }
+
+        /* Estilos para los campos de entrada de precios y checklist */
+        .price-input {
+            width: 3.75rem; /* 60px */
+        }
+
+        .checklist-input {
+            width: 1.25rem; /* 20px */
+        }
+
+        .price-input[readonly] {
+            border: none;
+            background-color: antiquewhite;
+        }
+
+        /* Estilos para hacer la página responsiva */
+        @media screen and (max-width: 768px) {
+            .caja {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="caja">
+            <h1><img src="imagenes/logo.png" style="width: 9.375rem; height: auto;"></h1> <!-- 150px -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Menu</a></li>
+                    <li><a href="Informacion.html">Información</a></li>
+                    <li><a href="Galeria.html">Galería</a></li>
+                </ul>
+            </nav>
+            <button id="modoToggle" class="boton-circular">🌙</button>
+        </div>
+    </header>
+
+    <!-- Contenido del Usuario/Consumidor -->
+    <section>
+        <h2>Usuario/Consumidor</h2>
+        <table class="user-table">
+            <tr>
+                <th>Tipo</th>
+                <th>Número de Platillos Disponibles</th>
+                <th>Precio</th>
+                <th>Reservar Platillo</th>
+            </tr>
+            <tr>
+                <td>Desayuno</td>
+                <td><input type="text" class="price-input" value="72" readonly></td>
+                <td><input type="text" class="price-input" value="4.50" readonly></td>
+                <td><input type="checkbox" class="checklist-input" onchange="mostrarAnuncio(this)"></td>
+            </tr>
+            <tr>
+                <td>Almuerzo</td>
+                <td><input type="text" class="price-input" value="45" readonly></td>
+                <td><input type="text" class="price-input" value="3.50" readonly></td>
+                <td><input type="checkbox" class="checklist-input" onchange="mostrarAnuncio(this)"></td>
+            </tr>
+            <tr>
+                <td>Merienda</td>
+                <td><input type="text" class="price-input" value="54" readonly></td>
+                <td><input type="text" class="price-input" value="2.75" readonly></td>
+                <td><input type="checkbox" class="checklist-input" onchange="mostrarAnuncio(this)"></td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <img src="imagenes/logo-blanco.png" style="width: 7.5rem; height: auto;"> <!-- 120px -->
+        <p class="copyright">&copy; Copyright Batallón de Comunicaciones Rumiñahui - 2023</p>
+    </footer>
+
+    <script>
+        // Función para mostrar el anuncio con opciones "Sí" y "No"
+        function mostrarAnuncio(checkbox) {
+            // Verificar si el checkbox está activo (marcado) o inactivo (desmarcado)
+            if (checkbox.checked) {
+                // Condiciones para activar el checklist
+                var mensajeActivar = "¿Estás de acuerdo con activar el checklist?";
+                var respuestaActivar = confirm(mensajeActivar);
+
+                if (respuestaActivar) {
+                    // Activar el checkbox solo si el usuario selecciona "Aceptar"
+                    alert("Has seleccionado 'Sí'. El checklist ha sido activado.");
+                } else {
+                    // Desactivar el checkbox si el usuario selecciona "No" al activar
+                    checkbox.checked = false;
+                    alert("Has seleccionado 'No'. El checklist permanece desactivado.");
+                }
+            } else {
+                // Condiciones para desactivar el checklist
+                var mensajeDesactivar = "¿Estás de acuerdo con desactivar el checklist?";
+                var respuestaDesactivar = confirm(mensajeDesactivar);
+
+                if (respuestaDesactivar) {
+                    // Desactivar el checkbox solo si el usuario selecciona "Aceptar"
+                    alert("Has seleccionado 'Sí'. El checklist ha sido desactivado.");
+                } else {
+                    // Mantener activo el checkbox si el usuario selecciona "No" al desactivar
+                    checkbox.checked = true;
+                    alert("Has seleccionado 'No'. El checklist permanece activado.");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
