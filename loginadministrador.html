@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="Informacion.css">
+    <link rel="stylesheet" href="Galeria.css">
+    <script src="modo-oscuro.js" defer></script>
+
+    <style>
+        /* Estilos para la información relevante de la institución */
+        .title-cards h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contenido-card h3 {
+            font-weight: bold;
+        }
+
+        .contenido-card p {
+            font-size: 16px;
+        }
+
+
+        /* Estilos para la tabla del administrador */
+        .admin-table {
+            margin-top: 10px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .admin-table th,
+        .admin-table td {
+            border: 1px solid #ddd;
+            padding: 10px; /* Aumentar el padding para más separación */
+            text-align: left;
+            line-height: 5; /* Añadir el interlineado de 5 unidades */
+        }
+
+        .admin-table th {
+            background-color: #59af9a;
+        }
+
+        /* Estilos para los campos de entrada de precios */
+        .price-input {
+            width: 60px; /* Ancho ajustable según tus necesidades */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="caja">
+            <h1><img src="imagenes/logo.png" style="width: 150px; height: auto;"></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Menu</a></li>
+                    <li><a href="Informacion.html">Información</a></li>
+                    <li><a href="Galeria.html">Galería</a></li>
+                </ul>
+            </nav>
+            <button id="modoToggle" class="boton-circular">🌙</button>
+        </div>
+    </header>
+
+    <!-- Contenido del Administrador -->
+    <section>
+        <h2>Administrador</h2>
+        <table class="admin-table">
+            <tr>
+                <th>Tipo</th>
+                <th>Número de Platillos Disponibles a ingresar</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Desayuno</td>
+                <td><input type="number" min="0"></td>
+                <td><input type="number" min="0" class="price-input"></td>
+            </tr>
+            <tr>
+                <td>Almuerzo</td>
+                <td><input type="number" min="0"></td>
+                <td><input type="number" min="0" class="price-input"></td>
+            </tr>
+            <tr>
+                <td>Merienda</td>
+                <td><input type="number" min="0"></td>
+                <td><input type="number" min="0" class="price-input"></td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <img src="imagenes/logo-blanco.png" style="width: 120px; height: auto;">
+        <p class="copyright">&copy; Copyright Batallón de Comunicaciones Rumiñahui - 2023</p>
+    </footer>
+</body>
+
+</html>

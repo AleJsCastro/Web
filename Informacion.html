@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="Informacion.css">
+    <link rel="stylesheet" href="Galeria.css">
+    <script src="modo-oscuro.js" defer></script>
+    
+    <style>
+        /* Estilos para la información relevante de la institución */
+        .title-cards h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contenido-card h3 {
+            font-weight: bold;
+        }
+
+        .contenido-card p {
+            font-size: 16px;
+        }
+
+        /* Estilos para centrar el mapa */
+        .map-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Estilos para el título del mapa */
+        .map-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="caja">
+            <h1><img src="imagenes/logo.png" style="width: 150px; height: auto;"></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Menu</a></li>
+                    <li><a href="Informacion.html">Información</a></li>
+                    <li><a href="Galeria.html">Galería</a></li>
+                </ul>
+            </nav>
+            <button id="modoToggle" class="boton-circular">🌙</button>
+        </div>
+    </header>
+
+    <!-- Tarjetas de Información -->
+    <div class="title-cards">
+        <h2>Información relevante de la Institución </h2>
+    </div>
+
+    <div class="container-card">
+        <!-- Tarjeta Historia -->
+        <div class="card">
+            <div class="contenido-card">
+                <figure>
+                    <img src="https://pbs.twimg.com/media/DJSsfK2XcAACAoc?format=jpg&name=large">
+                </figure>
+                <h3>Historia</h3>
+                <p>El 14 de junio de 1910, el Presidente Constitucional de la República del Ecuador, General Eloy Alfaro Delgado, consideró la necesidad de reglamentar y organizar las comunicaciones militares. Para tal efecto, emitió el primer decreto ejecutivo relacionado con esta importante actividad.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta Evolución -->
+        <div class="card">
+            <div class="contenido-card">
+                <figure>
+                    <img src="https://pbs.twimg.com/media/DJSshGCXgAI-ZfJ?format=jpg&name=large">
+                </figure>
+                <h3>Evolución</h3>
+                <p>En agosto de 1968, con una fracción del Batallón de Trasmisiones Nro. 1 “Rumiñahui”, se conformó el Escuadrón de Transmisiones Nro. 11. En abril de 1978, se formó la Compañía de Comunicaciones Nro. 13, inicialmente, ubicada en Quito.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta Investigaciones -->
+        <div class="card">
+            <div class="contenido-card">
+                <figure>
+                    <img src="https://pbs.twimg.com/media/DJSsjOSWsAEYLry?format=jpg&name=large">
+                </figure>
+                <h3>Investigaciones</h3>
+                <p>Este batallón también ha sido objeto de estudios de salud. Por ejemplo, se realizó una investigación para evaluar los factores de riesgo de padecer enfermedades crónicas no transmisibles (ECNT) en militares del batallón de comunicaciones Rumiñahui.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor para el mapa -->
+    <div class="map-container">
+        <!-- Título del mapa -->
+        <div class="map-title">Ubicación de la Institución:</div>
+        
+        <!-- Mapa -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d15959.228182881743!2d-78.476279!3d-0.136211!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMDgnMTAuNCJTIDc4wrAyOCczNC42Ilc!5e0!3m2!1ses!2sus!4v1700604085209!5m2!1ses!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <footer>
+        <img src="imagenes/logo-blanco.png" style="width: 120px; height: auto;">
+        <p class="copyright">&copy Copyright Batallón de Comunicaciones Rumiñahui - 2023</p>
+    </footer>
+</body>
+
+</html>

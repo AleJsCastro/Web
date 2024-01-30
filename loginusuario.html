@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="Informacion.css">
+    <link rel="stylesheet" href="Galeria.css">
+    <script src="modo-oscuro.js" defer></script>
+
+    <style>
+        /* Estilos para la información relevante de la institución */
+        .title-cards h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contenido-card h3 {
+            font-weight: bold;
+        }
+
+        .contenido-card p {
+            font-size: 16px;
+        }
+
+        /* Estilos para la tabla del usuario/consumidor */
+        .user-table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .user-table th,
+        .user-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            line-height: 5; /* Añadir el interlineado de 5 unidades */
+        }
+
+        .user-table th {
+            background-color: #59af9a;
+        }
+
+        /* Estilos para los campos de entrada de precios y checklist */
+        .price-input {
+            width: 60px;
+        }
+
+        .checklist-input {
+            width: 20px;
+        }
+
+        .price-input[readonly] {
+            border: none;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="caja">
+            <h1><img src="imagenes/logo.png" style="width: 150px; height: auto;"></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Menu</a></li>
+                    <li><a href="Informacion.html">Información</a></li>
+                    <li><a href="Galeria.html">Galería</a></li>
+                </ul>
+            </nav>
+            <button id="modoToggle" class="boton-circular">🌙</button>
+        </div>
+    </header>
+
+    <!-- Contenido del Usuario/Consumidor -->
+    <section>
+        <h2>Usuario/Consumidor</h2>
+        <table class="user-table">
+            <tr>
+                <th>Tipo</th>
+                <th>Número de Platillos Disponibles</th>
+                <th>Precio</th>
+                <th>Reservar Platillo</th>
+            </tr>
+            <tr>
+                <td>Desayuno</td>
+                <td><input type="text" class="price-input" value="72" readonly></td>
+                <td><input type="text" class="price-input" value="4.50" readonly></td>
+                <td><input type="checkbox" class="checklist-input"></td>
+            </tr>
+            <tr>
+                <td>Almuerzo</td>
+                <td><input type="text" class="price-input" value="45" readonly></td>
+                <td><input type="text" class="price-input" value="3.50" readonly></td>
+                <td><input type="checkbox" class="checklist-input"></td>
+            </tr>
+            <tr>
+                <td>Merienda</td>
+                <td><input type="text" class="price-input" value="54" readonly></td>
+                <td><input type="text" class="price-input" value="2.75" readonly></td>
+                <td><input type="checkbox" class="checklist-input"></td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <img src="imagenes/logo-blanco.png" style="width: 120px; height: auto;">
+        <p class="copyright">&copy; Copyright Batallón de Comunicaciones Rumiñahui - 2023</p>
+    </footer>
+</body>
+
+</html>
