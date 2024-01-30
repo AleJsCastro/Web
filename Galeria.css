@@ -1,0 +1,126 @@
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0e0e0;
+    color: #fff;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.titulo_galeria {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    max-width: auto;
+    margin: 2;
+    padding: 8px;
+    margin-top: 8px;
+    text-align: center;
+    color: #7a7a7a;
+    font-size: 2em; /* Ajusta el tamaño del texto según sea necesario */
+    font-weight: bold; /* Hace que el texto sea negrita */
+}
+
+
+/* Estilos para el contenedor de las imágenes */
+.galerias {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 1rem;
+    margin-top: 4rem; /* Agrega espacio en la parte superior */
+    margin-bottom: 3rem; /* Corrige el símbolo '/' */
+}
+
+.galerias img {
+    width: 220px;
+    height: 320px;
+    object-fit: cover; /* Cubre completamente el contenedor sin distorsionar la imagen */
+    border-radius: 1rem;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.3s ease-in-out;
+}
+
+/* Estilos para agrandar las imágenes al hacer hover */
+.galerias img:hover {
+    transform: scale(1.2); /* Escalado al hacer hover */
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.7); /* Sombra naranja al hacer hover */
+}
+
+
+/* Modo Oscuro */
+.modo-oscuro {
+    background-color: #333;
+    color: #fff;
+}
+
+#modoToggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#modoToggle:hover {
+    background-color: #ddd; /* Color de fondo al pasar el ratón */
+}
+
+.boton-circular {
+    overflow: hidden;
+}
+
+.boton-circular:hover {
+    transform: scale(1.1); /* Cambia el tamaño al pasar el ratón */
+}
+
+/* Encabezado y Pie de Página */
+header {
+    background-color: #0cb3ab;
+    color: white;
+    padding: 15px 0;
+}
+
+footer {
+    background-color: #181818;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer img {
+    max-width: 100%;
+    height: auto;
+}
+
+.copyright {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Modo Oscuro - Cuerpo */
+body.dark-mode {
+    background-color: #121212;
+    color: #ccc;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.dark-mode header {
+    background-color: #1e1e1e;
+}
+
+.dark-mode section {
+    background-color: #333;
+    border: 1px solid #555;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode section p,
+.dark-mode section h2 {
+    color: #aaa;
+}
+
+.dark-mode footer {
+    background-color: #1e1e1e;
+}
