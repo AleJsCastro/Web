@@ -2,99 +2,102 @@
 <html lang="es">
 <head>
     <!-- Encabezado (Head) del Documento HTML -->
-    
-    <!-- Configuración del juego de caracteres y escala del viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Título de la Página -->
     <title>Login y Registro - Batallón de Comunicaciones Rumiñahui</title>
-    
-    <!-- Enlaces a Archivos de Estilos y Fuentes -->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="Informacion.css">
     <link rel="stylesheet" href="Menu.css">
     <link rel="stylesheet" href="Galeria.css">
-    
-    <!-- Enlace a la fuente de texto "Roboto" desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-    <!-- Inclusión de Script para el Modo Oscuro (defer indica que se ejecutará después de que se cargue la página) -->
     <script src="modo-oscuro.js" defer></script>
 </head>
 <body>
     <!-- Cuerpo (Body) del Documento HTML -->
-    
-    <!-- Encabezado de la Página (Header) -->
     <header>
         <div class="caja">
-            <!-- Logo y Navegación -->
             <h1><img src="imagenes/logo.png" alt="Logo" style="width: 150px; height: auto;"></h1>
             <nav>
-                <!-- Menú de Navegación -->
                 <ul>
                     <li><a href="index.html">Menú</a></li>
                     <li><a href="Informacion.html">Información</a></li>
                     <li><a href="Galeria.html">Galería</a></li>
                 </ul>
             </nav>
-            
-            <!-- Botón para Cambiar el Modo Claro/Oscuro -->
             <button id="modoToggle" class="boton-circular">🌙</button>
         </div>
     </header>
 
-    <!-- Contenido Principal (Main) -->
     <main>
         <div class="contenedor__todo">
-            <!-- Caja Trasera con Enlaces de Inicio de Sesión y Registro -->
             <div class="caja__trasera">
-                <!-- Caja de Inicio de Sesión -->
                 <div class="caja__trasera-login">
                     <h3>¿Ya tienes una cuenta?</h3>
                     <p>Inicia sesión para entrar en la página</p>
-                    <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    <button id="btn__iniciar-sesion" onclick="mostrarFormulario('loginForm')">Iniciar Sesión</button>
                 </div>
-
-                <!-- Caja de Registro -->
                 <div class="caja__trasera-register">
                     <h3>¿Aún no tienes una cuenta?</h3>
                     <p>Regístrate para poder iniciar sesión</p>
-                    <button id="btn__registrarse">Registrarse</button>
+                    <button id="btn__registrarse" onclick="mostrarFormulario('registerForm')">Registrarse</button>
                 </div>
             </div>
-
-            <!-- Formularios de Inicio de Sesión y Registro -->
             <div class="contenedor__login-register">
-                <!-- Formulario de Inicio de Sesión -->
-                <form action="" class="formulario__login">
+                <form id="loginForm" class="formulario__login">
                     <h2>Iniciar Sesión</h2>
-                    <input type="text" placeholder="Correo Electrónico">
-                    <input type="password" placeholder="Contraseña">
-                    <button>Entrar</button>
+                    <input type="text" id="loginEmail" placeholder="Correo Electrónico">
+                    <input type="password" id="loginPassword" placeholder="Contraseña">
+                    <button type="button" onclick="login()">Entrar</button>
                 </form>
-
-                <!-- Formulario de Registro -->
-                <form action="" class="formulario__register">
+                <form id="registerForm" class="formulario__register">
                     <h2>Registrarse</h2>
                     <input type="text" placeholder="Nombre Completo">
                     <input type="text" placeholder="Correo Electrónico">
                     <input type="text" placeholder="Usuario">
                     <input type="password" placeholder="Contraseña">
-                    <button>Registrarse</button>
+                    <button type="button" onclick="register()">Registrarse</button>
                 </form>
             </div>
         </div>
     </main>
 
-    <!-- Pie de Página (Footer) -->
     <footer>
-        <!-- Logo Blanco y Aviso de Copyright -->
         <img src="imagenes/logo-blanco.png" alt="Logo blanco" style="width: 120px; height: auto;">
         <p class="copyright">&copy; Copyright Batallón de Comunicaciones Rumiñahui - 2023</p>
     </footer>
 
-    <!-- Script para la Interfaz del Menú -->
     <script src="Menu_interfaz.js"></script>
+    <script>
+        function mostrarFormulario(formularioId) {
+            // Ocultar todos los formularios
+            var formularios = document.querySelectorAll('.contenedor__login-register form');
+            formularios.forEach(formulario => {
+                formulario.style.display = 'none';
+            });
+
+            // Mostrar el formulario deseado
+            document.getElementById(formularioId).style.display = 'block';
+        }
+
+        function login() {
+            var email = document.getElementById('loginEmail').value;
+            var password = document.getElementById('loginPassword').value;
+
+            if (email === 'admin@admin.com' && password === 'admin123') {
+                window.location.href = 'loginadministrador.html';
+            } else if (email === 'usuario1@gmail.com' && password === 'contrasena1') {
+                window.location.href = 'loginusuario.html';
+            } else if (email === 'usuario2@gmail.com' && password === 'contrasena2') {
+                window.location.href = 'loginusuario.html';
+            } else {
+                alert('Correo o contraseña incorrectos');
+            }
+        }
+
+        function register() {
+            // Implementa la lógica de registro si es necesario
+            alert('Función de registro no implementada');
+        }
+    </script>
 </body>
 </html>

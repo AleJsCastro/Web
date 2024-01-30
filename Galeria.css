@@ -33,7 +33,7 @@ body {
 }
 
 .galerias img {
-    width: 220px;
+    width: calc(18% - 5px);
     height: 320px;
     object-fit: cover; /* Cubre completamente el contenedor sin distorsionar la imagen */
     border-radius: 1rem;
